@@ -13,6 +13,19 @@
 	<!-- 패키지 경로를 읽어서 @Controller 클래스를 빈으로 자동등록 -->
 	<context:component-scan base-package="com.simple.controller"/>
 	
+	<!-- 뷰 리졸버 - 컨트롤러에서 반환받는 뷰의 경로를 합성해주는 역할 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 정적자원 맵핑 resources/~~ 요청이 들어오면 컨트롤러를 타지 않고 /resources/ 폴더로 연결 -->
+	<resources mapping="/resources/**" location="/resources/" />
+	
+	
+	
+	
+	
 	<!-- <beans:bean id="homeController" class="com.simple.controller.HomeController" /> -->
 	
 	

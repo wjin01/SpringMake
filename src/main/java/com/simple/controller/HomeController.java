@@ -17,7 +17,8 @@ public class HomeController {
 		
 		System.out.println("컨트롤러 이동");
 		
-		return "/WEB-INF/views/home.jsp";
+		//return "/WEB-INF/views/home.jsp";
+		return "home";
 	}
 	
 }
